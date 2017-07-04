@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTZ-ZB-1pA">
-                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="425" width="375" height="242"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-zw-GbL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -39,52 +40,60 @@
                                         </items>
                                     </toolbar>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVl-4X-uSQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="dI4-Wm-xYy"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="rBL-P9-10K"/>
-                                        </connections>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="198"/>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="aVl-4X-uSQ" secondAttribute="bottom" id="03A-bt-OZ8"/>
-                                    <constraint firstAttribute="trailing" secondItem="aVl-4X-uSQ" secondAttribute="trailing" id="11H-nj-s84"/>
-                                    <constraint firstItem="aVl-4X-uSQ" firstAttribute="top" secondItem="xTZ-ZB-1pA" secondAttribute="top" id="6ZP-5u-tuh"/>
                                     <constraint firstItem="yyU-zw-GbL" firstAttribute="top" secondItem="xTZ-ZB-1pA" secondAttribute="top" id="8Xc-hU-mcG"/>
-                                    <constraint firstAttribute="height" constant="240" id="9Qq-PJ-3dq"/>
-                                    <constraint firstItem="aVl-4X-uSQ" firstAttribute="leading" secondItem="xTZ-ZB-1pA" secondAttribute="leading" id="hch-Yt-ln7"/>
+                                    <constraint firstAttribute="height" constant="242" id="9Qq-PJ-3dq"/>
+                                    <constraint firstItem="aVl-4X-uSQ" firstAttribute="top" secondItem="yyU-zw-GbL" secondAttribute="bottom" id="Emd-hg-ojj"/>
                                     <constraint firstAttribute="trailing" secondItem="yyU-zw-GbL" secondAttribute="trailing" id="iQ2-jc-A24"/>
+                                    <constraint firstItem="aVl-4X-uSQ" firstAttribute="leading" secondItem="xTZ-ZB-1pA" secondAttribute="leading" id="ikS-sm-TAR"/>
+                                    <constraint firstAttribute="bottom" secondItem="aVl-4X-uSQ" secondAttribute="bottom" id="mmv-AT-iuB"/>
                                     <constraint firstItem="yyU-zw-GbL" firstAttribute="leading" secondItem="xTZ-ZB-1pA" secondAttribute="leading" id="nQT-mz-N1N"/>
+                                    <constraint firstAttribute="trailing" secondItem="aVl-4X-uSQ" secondAttribute="trailing" id="yPa-dV-0p0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-6k-ZcC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-6k-ZcC">
                                 <rect key="frame" x="116" y="133" width="143" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="x30-2e-ZSS"/>
+                                </constraints>
                                 <state key="normal" title="Choose Day of Week"/>
                                 <connections>
                                     <action selector="btn_ChooseDays:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTs-PC-fEx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAM-he-2n3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAM-he-2n3">
                                 <rect key="frame" x="116" y="182" width="143" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="6QQ-0r-mOL"/>
+                                </constraints>
                                 <state key="normal" title="Choose Location"/>
                                 <connections>
                                     <action selector="btn_ChooseLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qy-8F-cGl"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A9v-8V-Tm9">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A9v-8V-Tm9">
                                 <rect key="frame" x="267" y="143" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Bxo-bl-OyA"/>
+                                    <constraint firstAttribute="height" constant="20" id="mix-37-aw3"/>
+                                </constraints>
                             </activityIndicatorView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d39-hs-QGx">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d39-hs-QGx">
                                 <rect key="frame" x="267" y="187" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3Xm-yy-KLy"/>
+                                    <constraint firstAttribute="width" constant="20" id="ZEo-qK-JoS"/>
+                                </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qk4-QC-l17">
-                                <rect key="frame" x="116" y="270" width="171" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qk4-QC-l17">
+                                <rect key="frame" x="102" y="270" width="171" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="e84-wk-ROx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -92,9 +101,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Qk4-QC-l17" firstAttribute="top" secondItem="MAM-he-2n3" secondAttribute="bottom" constant="58" id="1lG-dP-re7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d39-hs-QGx" secondAttribute="trailing" constant="72" id="2a7-XZ-3Rv"/>
                             <constraint firstAttribute="trailing" secondItem="xTZ-ZB-1pA" secondAttribute="trailing" id="4FC-VX-47b"/>
+                            <constraint firstItem="Qk4-QC-l17" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8vD-7M-AHz"/>
+                            <constraint firstItem="A9v-8V-Tm9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="123" id="Egr-E8-ak3"/>
                             <constraint firstItem="xTZ-ZB-1pA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M4A-CE-a0z"/>
+                            <constraint firstItem="d39-hs-QGx" firstAttribute="top" secondItem="A9v-8V-Tm9" secondAttribute="bottom" constant="24" id="NHo-iI-tDD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9v-8V-Tm9" secondAttribute="trailing" constant="72" id="SgT-h9-Sab"/>
+                            <constraint firstItem="Zbc-6k-ZcC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="113" id="UMZ-lb-ucF"/>
+                            <constraint firstItem="MAM-he-2n3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fXb-fw-D9f"/>
+                            <constraint firstItem="MAM-he-2n3" firstAttribute="top" secondItem="Zbc-6k-ZcC" secondAttribute="bottom" constant="19" id="gql-Tb-ufP"/>
+                            <constraint firstItem="Zbc-6k-ZcC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nt5-sA-bLQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTZ-ZB-1pA" secondAttribute="bottom" id="t6U-Lv-Lmh"/>
+                            <constraint firstItem="d39-hs-QGx" firstAttribute="leading" secondItem="A9v-8V-Tm9" secondAttribute="leading" id="u5T-Mv-awn"/>
                         </constraints>
                     </view>
                     <connections>
